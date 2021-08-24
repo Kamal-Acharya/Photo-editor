@@ -1,33 +1,36 @@
 var foto;
-window.onload=function(){
-    foto=new Foto();
+async function exec(){
+    foto= await new Foto();
 }
 
 
-function makegray(){
-    foto.grayscale();
+
+async function makegray(){
+    await foto.grayscale();
 }
-function makedarker(){
-    foto.makeDark();
+async function makedarker(){
+    await foto.makeDark();
 }
-function makeBright(){
-    foto.makeBright();
+async function makeBright(){
+    await foto.makeBright();
 }
-function makeSharp(){
-    foto.applySharpFilter();
+async function makeSharp(){
+    await foto.applySharpFilter();
 }
-function crop(){
+async function crop(){
     foto.cropSelected();
 }
-function flipVertically(){
-    foto.flipVertically();
+async function flipVertically(){
+    await  foto.flipVertically();
 }
-function makeBlur(){
-    foto.applyBlurFlter();
+async function makeBlur(){
+    await foto.applyBlurFilter();
 }
-function makeEmboss(){
-    foto.applyEmbossFlter();
+async function makeEmboss(){
+    await  foto.applyEmbossFilter();
 }
-function download(){
-    foto.export();
+async function download(){
+    await foto.export();
 }
+
+exec();
